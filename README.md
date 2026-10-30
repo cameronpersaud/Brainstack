@@ -7,7 +7,15 @@ is and how much there is, in real micrometres.
 
 ![Dye inside a see-through brain](docs/screenshots/5_dye_view.png)
 
-## Quick start
+## Use it in your browser (no install)
+
+The `docs/` folder is a complete browser version of the same five steps. Host it free on
+GitHub Pages (see **[PUBLISHING.md](PUBLISHING.md)**), then anyone can open the link and drop
+in their slices. All processing happens on their own computer; no images are uploaded.
+
+To try it locally: `cd docs && python3 -m http.server 8000`, then open http://localhost:8000.
+
+## Quick start (desktop app)
 
 1. Install **Python 3.10 or newer** from https://www.python.org/downloads/
    (on Windows, tick "Add Python to PATH" during install).
@@ -213,7 +221,10 @@ brainstack/orientation.py   cutting planes, anatomical axes, anatomical dye posi
 brainstack/render.py        3D views (PyVista / VTK)
 brainstack/ui/              the step-by-step interface (PySide6)
 tools/make_demo_data.py     synthetic test brain with known ground truth
-tests/                      pipeline + full-UI tests
+tests/                      pipeline + full-UI tests (desktop) and web_e2e.js (browser)
+docs/                       the browser version (served by GitHub Pages)
+  index.html, css/, js/     app, image I/O, alignment, dye detection, 3D meshes, viewer
+  vendor/                   three.js, UTIF (TIFF reader), pako, with their licences
 ```
 
 Run the tests on demo data:
